@@ -19,7 +19,7 @@ const getAllStudents = async (page, limit) => {
 
   // Query to retrieve marks and subjects for all students
   const marksQuery = `
-    SELECT m.student_id, sub.name AS subject, m.mark
+    SELECT m.student_id, sub.name AS subject, sub.id AS subject_id, m.mark
     FROM marks m
     INNER JOIN subjects sub ON m.subject_id = sub.id
   `;
@@ -32,7 +32,7 @@ const getAllStudents = async (page, limit) => {
   students.forEach((student) => {
     student.marks = marks
       .filter((mark) => mark.student_id === student.id)
-      .map((mark) => ({ subject: mark.subject, mark: mark.mark }));
+      .map((mark) => ({ subject: mark.subject, subject_id: mark.subject_id,mark: mark.mark }));
   });
 
   return { totalRecords, students };

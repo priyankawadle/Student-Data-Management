@@ -1,5 +1,8 @@
 import axios from 'axios';
 
+export const getSubjects = async () => {
+  return await axios.get(`/subjects`);
+};
 
 export const getStudents = (page, limit) =>
   axios.get(`/students?page=${page}&limit=${limit}`);

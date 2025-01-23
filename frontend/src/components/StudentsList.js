@@ -51,14 +51,17 @@ const StudentsList = () => {
 
   return (
     <div className="container mt-5">
-      <h2>All Students</h2>
-      <Button
-        variant="primary"
-        className="add-student-btn"
-        onClick={() => setShowAddModal(true)}
-      >
-        Add New Student
-      </Button>
+      <div className="d-flex justify-content-between align-items-center">
+        <h2>All Students</h2>
+        <Button
+          variant="primary"
+          className="add-student-btn"
+          onClick={() => setShowAddModal(true)}
+        >
+          Add New Student
+        </Button>
+      </div>
+
       <Table striped bordered hover>
         <thead>
           <tr>
@@ -70,42 +73,51 @@ const StudentsList = () => {
           </tr>
         </thead>
         <tbody>
-          {students.map((student) => (
-            <tr key={student.id}>
-              <td>{student.id}</td>
-              <td>{student.name}</td>
-              <td>{student.email}</td>
-              <td>{student.age}</td>
-              <td>
-                <Button
-                  variant="info"
-                  onClick={() => {
-                    setSelectedStudent(student);
-                    setShowViewModal(true);
-                  }}
-                >
-                  View
-                </Button>{" "}
-                <Button
-                  variant="warning"
-                  onClick={() => {
-                    setSelectedStudent(student);
-                    setShowEditModal(true);
-                  }}
-                >
-                  Edit
-                </Button>{" "}
-                <Button
-                  variant="danger"
-                  onClick={() => handleDelete(student.id)}
-                >
-                  Delete
-                </Button>
+          {students.length > 0 ? (
+            students.map((student) => (
+              <tr key={student.id}>
+                <td>{student.id}</td>
+                <td>{student.name}</td>
+                <td>{student.email}</td>
+                <td>{student.age}</td>
+                <td>
+                  <Button
+                    variant="info"
+                    onClick={() => {
+                      setSelectedStudent(student);
+                      setShowViewModal(true);
+                    }}
+                  >
+                    View
+                  </Button>{" "}
+                  <Button
+                    variant="warning"
+                    onClick={() => {
+                      setSelectedStudent(student);
+                      setShowEditModal(true);
+                    }}
+                  >
+                    Edit
+                  </Button>{" "}
+                  <Button
+                    variant="danger"
+                    onClick={() => handleDelete(student.id)}
+                  >
+                    Delete
+                  </Button>
+                </td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan="5" className="text-center">
+                No data available
               </td>
             </tr>
-          ))}
+          )}
         </tbody>
       </Table>
+
       <Pagination>
         {[...Array(totalPages).keys()].map((page) => (
           <Pagination.Item

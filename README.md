@@ -1,70 +1,105 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Student Data Management Application
 
-## Available Scripts
+This repository contains both the backend (Node.js) and frontend (React.js) applications for managing student data.
 
-In the project directory, you can run:
+## Features
+- Add, edit, view and delete student records.
+- View and update subjects and marks for each student.
+- Pagination for student records.
+- Fully responsive frontend using React Bootstrap.
+- SweetAlert2 integration for user-friendly modals and alerts.
 
-### `npm start`
+## Project Structure
+```
+/Student-Data-Management
+  /Backend
+  /frontend
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Prerequisites
+Make sure you have the following installed on your system:
+- Node.js (>= 14.x, used 22.12.0 version )
+- npm (Node Package Manager)
+- PostgreSQL (Database , use pgadmin for revewing db changes )
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Steps to Set Up the Application
 
-### `npm test`
+### Database Setup
+1. Install PostgreSQL and pgAdmin :
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Create a database for the application:
+   - Open pgAdmin or your PostgreSQL CLI.
+   - Run the following command to create a new database:
+     ```sql
+     CREATE DATABASE student_db;
+     ```
 
-### `npm run build`
+### Backend Setup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Navigate to the `Backend` folder:
+   ```bash
+   cd Backend
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Create a `.env` file in the `Backend` folder with the following content:
+   ```env
+   DB_USER=your_database_user
+   DB_HOST=localhost
+   DB_DATABASE=student_db
+   DB_PASSWORD=your_database_password
+   DB_PORT=5432
+   PORT=3001
+   ```
 
-### `npm run eject`
+4. Run the script to create tables and insert default data:
+   ```bash
+   node createTables.js
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+5. Start the backend server:
+   ```bash
+   npm start
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   By default, the server runs at [http://localhost:3001](http://localhost:3001).
+   After successfull execution of Backend repo you can execute apis given in postman export file.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Frontend Setup
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Navigate to the `Frontend` folder:
+   ```bash
+   cd frontend
+   ```
 
-## Learn More
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Start the frontend server:
+   ```bash
+   npm start
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   By default, the application runs at [http://localhost:3000](http://localhost:3000).
 
-### Code Splitting
+### Root-Level Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+For root-level dependencies (if any), run the following command in the root directory:
+```bash
+npm install
+```
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### After successfull script execution , package installation on Backend , frontend and root folder now Start the frontend & backend server together:
+   ```bash
+   npm start
+   ```
+It will redirect you on broswer http://localhost:3000/ .
+You can perform CRUD operations for student data management.
+---
