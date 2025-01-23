@@ -35,6 +35,7 @@ DB_HOST=localhost
 DB_DATABASE=student_db
 DB_PASSWORD=your_postgres_password
 DB_PORT=5432
+PORT=3001
 ```
 
 ## Steps to Set Up the Project
