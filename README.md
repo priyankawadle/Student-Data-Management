@@ -28,8 +28,8 @@ If you are using the zip folder directly, follow the steps below to set up the p
 
 ## Steps to Set Up the Project
 
-### 1. Create the .env file
-Create .env file.
+### 1. Create the .env file Backend directory
+Create .env file in Backend directory.
 Copy variables from .env.sample to .env file.
 and modify below two variables based on your postgres credentials.
 DB_USER=your_postgres_username
