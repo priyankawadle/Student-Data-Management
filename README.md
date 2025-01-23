@@ -82,13 +82,6 @@ Make sure you have the following installed on your system:
    npm install
    ```
 
-3. Start the frontend server:
-   ```bash
-   npm start
-   ```
-
-   By default, the application runs at [http://localhost:3000](http://localhost:3000).
-
 ### Root-Level Setup
 
 For root-level dependencies (if any), run the following command in the root directory:
