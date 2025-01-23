@@ -1,6 +1,5 @@
 
 # Student Data Management Application
-
 This repository contains both the backend (Node.js) and frontend (React.js) applications for managing student data.
 
 ## Features
@@ -22,77 +21,38 @@ Make sure you have the following installed on your system:
 - Node.js (>= 14.x, used 22.12.0 version )
 - npm (Node Package Manager)
 - PostgreSQL (Database , use pgadmin for revewing db changes )
+- Create a PostgreSQL database with the schema name `student_db`.
+- Add your PostgreSQL credentials to the `.env` file.
 
-## Steps to Set Up the Application
+Use Zip folder to execute project.
+If you are using the zip folder directly, follow the steps below to set up the project and ensure everything is running correctly. Make sure you have PostgreSQL installed and running on your local machine.
 
-### Database Setup
-1. Install PostgreSQL and pgAdmin :
 
-2. Create a database for the application:
-   - Open pgAdmin or your PostgreSQL CLI.
-   - Run the following command to create a new database:
-     ```sql
-     CREATE DATABASE student_db;
-     ```
-
-### Backend Setup
-
-1. Navigate to the `Backend` folder:
-   ```bash
-   cd Backend
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Create a `.env` file in the `Backend` folder with the following content:
-   ```env
-   DB_USER=your_database_user
-   DB_HOST=localhost
-   DB_DATABASE=student_db
-   DB_PASSWORD=your_database_password
-   DB_PORT=5432
-   PORT=3001
-   ```
-
-4. Run the script to create tables and insert default data:
-   ```bash
-   node createTables.js
-   ```
-
-5. Start the backend server:
-   ```bash
-   npm start
-   ```
-
-   By default, the server runs at [http://localhost:3001](http://localhost:3001).
-   After successfull execution of Backend repo you can execute apis given in postman export file.
-
-### Frontend Setup
-
-1. Navigate to the `Frontend` folder:
-   ```bash
-   cd frontend
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-### Root-Level Setup
-
-For root-level dependencies (if any), run the following command in the root directory:
-```bash
-npm install
+### Example `.env` File
+```env
+DB_USER=your_postgres_username
+DB_HOST=localhost
+DB_DATABASE=student_db
+DB_PASSWORD=your_postgres_password
+DB_PORT=5432
 ```
 
-#### After successfull script execution , package installation on Backend , frontend and root folder now Start the frontend & backend server together:
-   ```bash
-   npm start
-   ```
+## Steps to Set Up the Project
+
+### 1. Create the Database Tables
+Run the `createTables.js` script to create the necessary tables in the database:
+```bash
+cd Backend
+node createTables.js
+```
+
+### 2. Start the Frontend and Backend Server
+Execute the following command in the root directory to start both the frontend and backend server:
+```bash
+npm start
+```
 It will redirect you on broswer http://localhost:3000/ .
 You can perform CRUD operations for student data management.
+
+### No need to install packages zip folder already contains node_modules 
 ---
