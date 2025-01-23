@@ -28,13 +28,7 @@ If you are using the zip folder directly, follow the steps below to set up the p
 
 ## Steps to Set Up the Project
 
-### 1. Create the Database Tables
-Run the `createTables.js` script to create the necessary tables in the database:
-```bash
-cd Backend
-node createTables.js
-```
-### 2. Create the .env file
+### 1. Create the .env file
 Create .env file.
 Copy variables from .env.sample to .env file.
 and modify below two variables based on your postgres credentials.
@@ -46,6 +40,12 @@ Execute the following command in the Backend directory :
 ```bash
 cd Backend
 npm install
+```
+### 3. Create the Database Tables
+Run the `createTables.js` script to create the necessary tables in the database:
+```bash
+cd Backend
+node createTables.js
 ```
 ### 4. Install depedencies in frontend directory
 Execute the following command in the Frontend directory :
